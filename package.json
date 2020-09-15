@@ -1,7 +1,7 @@
 {
-  "name": "@digital-magic/ts-common-utils",
-  "version": "1.0.2",
-  "description": "Common utilities for Type Script projects",
+  "name": "@digital-magic/ts-template",
+  "version": "1.0.1",
+  "description": "Template for Typescript based projects",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "sideEffects": false,
