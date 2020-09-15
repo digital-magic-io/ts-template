@@ -1,12 +1,12 @@
 {
   "name": "@digital-magic/ts-common-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Common utilities for Type Script projects",
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./lib",
     "lint": "tslint -p .",
     "jest-clear-cache": "jest --clearCache",
     "prettier": "pretty-quick --check --pattern \"src/**/*.*(ts|tsx)\" --pattern \"test/**/*.*(ts|tsx)\"",
@@ -14,15 +14,19 @@
     "jest": "jest",
     "test": "npm run jest-clear-cache && npm run prettier && npm run jest",
     "prebuild": "npm run clean && npm run prettier",
-    "postbuild": "pretty-quick --pattern \"build/**/*.*(js|ts|jsx|tsx)\"",
-    "precommit": "pretty-quick --staged",
+    "postbuild": "pretty-quick --pattern \"lib/**/*.*(js|ts|jsx|tsx)\"",
     "prepare": "tsc -p .",
-    "build": "tsc -p ."
+    "build": "tsc -p ./tsconfig.build.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digital-magic-io/ts-template.git"
   },
+  "files": [
+    "lib/",
+    "LICENSE",
+    "README.md"
+  ],
   "author": "Jevgeni Goloborodko <jevgeni@digital-magic.io>",
   "license": "MIT",
   "bugs": {
@@ -38,19 +42,26 @@
     "template"
   ],
   "devDependencies": {
-    "@types/jest": "^26.0.10",
-    "@types/node": "^11.15.20",
-    "@types/prettier": "^2.0.2",
-    "husky": "^4.2.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@types/jest": "^26.0.13",
+    "@types/node": "^11.15.24",
+    "@types/prettier": "^2.1.1",
+    "husky": "^4.3.0",
     "jest": "^26.4.2",
-    "prettier": "^2.1.0",
-    "pretty-quick": "^3.0.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.2",
     "rimraf": "^3.0.2",
+    "ts-jest": "^26.3.0",
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "tslint-config-standard": "^9.0.0",
     "tslint-immutable": "^6.0.1",
     "typescript": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
