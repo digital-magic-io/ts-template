@@ -9,6 +9,7 @@
     "strict-boolean-expressions": true,
     "forin": true,
     "no-console": true,
+    "no-consecutive-blank-lines": false,
     "array-type": [true, "generic"],
     "readonly-keyword": true,
     "readonly-array": true
