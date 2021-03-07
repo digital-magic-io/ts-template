@@ -1,4 +1,4 @@
-export function hello() {
-  // tslint:disable-next-line:no-console
+export function hello(): void {
+  // eslint-disable-next-line no-console
   console.log('Hello')
 }
