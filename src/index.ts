@@ -1,4 +1,3 @@
-export function hello() {
-  // tslint:disable-next-line:no-console
+export const hello = (): void => {
   console.log('Hello')
 }

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
-    "lib": ["dom", "es6", "esnext"],
+    "module": "esnext",
+    "lib": ["esnext"],
     "allowJs": false,
     "checkJs": false,
     "declaration": true,
@@ -11,15 +11,21 @@
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "stripInternal": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "exactOptionalPropertyTypes": false,
+    "strictNullChecks": true
   },
-  "include": ["./src", "./test"]
+  "include": ["./src", "./test", "./*.ts"]
 }
